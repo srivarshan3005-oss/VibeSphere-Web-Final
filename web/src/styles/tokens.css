@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light dark;
+
+  --font-display: 'Bricolage Grotesque Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Instrument Sans Variable', 'Segoe UI', system-ui, sans-serif;
+
+  --step--1: 0.8125rem;
+  --step-0: 0.9375rem;
+  --step-1: 1.0625rem;
+  --step-2: 1.25rem;
+  --step-3: 1.75rem;
+  --step-4: 2.5rem;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --radius-s: 10px;
+  --radius-m: 14px;
+  --radius-l: 22px;
+
+  --nav-h: 64px;
+  --topbar-h: 56px;
+}
+
+/* Light theme (default) */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f2f1f8;
+  --surface: #ffffff;
+  --surface-2: #ebe9f5;
+  --text: #17142b;
+  --muted: #5e5a78;
+  --line: #dedbee;
+  --primary: #6f4df5;
+  --on-primary: #ffffff;
+  --link: #5a38d6;
+  --pink: #ff5c8a;
+  --heart: #e5306b;
+  --danger: #c9244f;
+  --danger-bg: #fde8ee;
+  --info-bg: #e9e4ff;
+  --skeleton: #e3e1f0;
+  --overlay: rgba(23, 20, 43, 0.5);
+  --shadow: 0 1px 2px rgba(23, 20, 43, 0.06), 0 8px 24px rgba(23, 20, 43, 0.06);
+  --focus: #5a38d6;
+}
+
+/* Dark theme: explicit choice, or "system" when the OS prefers dark */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0c0b16;
+  --surface: #15132a;
+  --surface-2: #1d1a38;
+  --text: #f4f3fc;
+  --muted: #a9a5c4;
+  --line: #2b2848;
+  --primary: #6f4df5;
+  --on-primary: #ffffff;
+  --link: #b9a8ff;
+  --pink: #ff6f97;
+  --heart: #ff6f97;
+  --danger: #ff7a93;
+  --danger-bg: #3a1624;
+  --info-bg: #241d52;
+  --skeleton: #211e3d;
+  --overlay: rgba(0, 0, 0, 0.65);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --focus: #b9a8ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0c0b16;
+    --surface: #15132a;
+    --surface-2: #1d1a38;
+    --text: #f4f3fc;
+    --muted: #a9a5c4;
+    --line: #2b2848;
+    --primary: #6f4df5;
+    --on-primary: #ffffff;
+    --link: #b9a8ff;
+    --pink: #ff6f97;
+    --heart: #ff6f97;
+    --danger: #ff7a93;
+    --danger-bg: #3a1624;
+    --info-bg: #241d52;
+    --skeleton: #211e3d;
+    --overlay: rgba(0, 0, 0, 0.65);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --focus: #b9a8ff;
+  }
+}
