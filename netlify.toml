@@ -1,0 +1,26 @@
+
+# Netlify build + routing for the VibeSphere web app (React + Vite SPA in /web).
+[build]
+  base    = "web"
+  command = "npm ci && npm run build"
+  publish = "dist"            # relative to base -> web/dist
+
+[build.environment]
+  NODE_VERSION = "22"
+  # The browser calls /api on the Netlify origin; Netlify proxies it to Render (rule below).
+  # This keeps the HttpOnly SameSite=Lax session cookie first-party, so authentication keeps working
+  # without loosening cookie or CSRF protections.
+  VITE_API_URL = "/api"
+
+# 1) API + uploads proxy (must stay ABOVE the SPA fallback)
+[[redirects]]
+  from   = "/api/*"
+  to     = "https://vibesphere-backend-api.onrender.com/api/:splat"
+  status = 200
+  force  = true
+
+# 2) SPA fallback for React Router (BrowserRouter) deep links like /login, /profile/x
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
